@@ -21,7 +21,7 @@ import { Colors } from '../constants/theme';
 // mounts, because React runs child useEffects before parent useEffects.
 Purchases.setLogLevel(__DEV__ ? LOG_LEVEL.VERBOSE : LOG_LEVEL.WARN);
 if (Platform.OS === 'ios') {
-  Purchases.configure({ apiKey: 'test_qgOoYRuoTvpMGeFPxICYckEpxfq' });
+  Purchases.configure({ apiKey: 'appl_afDcsxRNUIiGgJyuIuJqsyJQeaz' });
 }
 
 SplashScreen.preventAutoHideAsync();

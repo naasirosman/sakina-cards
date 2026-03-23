@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import Purchases, { CustomerInfo } from 'react-native-purchases';
 import { Level } from '../constants/decks';
 
-const ENTITLEMENT_ID = 'Sakina Cards Pro';
+const ENTITLEMENT_ID = 'Full Sakina Pack';
 
 export function usePurchase() {
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
