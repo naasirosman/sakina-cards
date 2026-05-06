@@ -6,6 +6,9 @@ export default function PaywallScreen() {
   useEffect(() => {
     (async () => {
       const result = await RevenueCatUI.presentPaywall();
+      // Wait for RevenueCat's native sheet to fully dismiss before navigating,
+      // otherwise its background teardown throws an ObjC exception mid-transition.
+      await new Promise(resolve => setTimeout(resolve, 150));
       switch (result) {
         case PAYWALL_RESULT.PURCHASED:
         case PAYWALL_RESULT.RESTORED:
