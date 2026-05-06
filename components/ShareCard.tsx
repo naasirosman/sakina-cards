@@ -40,7 +40,7 @@ const ShareCard = React.forwardRef<View, Props>(function ShareCard(
         <Text style={styles.questionText}>{question}</Text>
 
         <View style={styles.footer}>
-          <Text style={[styles.appName, { color: accentColor }]}>Sakinah Cards</Text>
+          <Text style={[styles.appName, { color: accentColor }]}>Sakina Cards</Text>
           <Text style={styles.download}>Download on the App Store</Text>
         </View>
       </View>
