@@ -14,13 +14,34 @@ Thoughtful conversation card decks for Muslim couples — pre-marriage, married 
 
 ---
 
+## Monorepo Structure
+
+```
+sakinah-cards/        ← mobile app (Expo + React Native)
+sakinah-cards-web/    ← landing page (Next.js)
+.github/workflows/    ← CI/CD
+```
+
+---
+
 ## Local Development
 
+### Mobile
+
 ```bash
+cd sakinah-cards
 npm install
 npm start          # opens Expo Go QR code
 npm run ios        # iOS simulator
 npm run android    # Android emulator
+```
+
+### Web
+
+```bash
+cd sakinah-cards-web
+npm install
+npm run dev        # Next.js dev server → http://localhost:3000
 ```
 
 ---
