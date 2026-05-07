@@ -117,6 +117,14 @@ export default function SettingsScreen() {
             <View style={styles.rowDivider} />
             <TouchableOpacity
               style={styles.row}
+              onPress={() => openLink('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')}
+            >
+              <Text style={styles.rowLabel}>Terms of Service</Text>
+              <Text style={styles.chevron}>›</Text>
+            </TouchableOpacity>
+            <View style={styles.rowDivider} />
+            <TouchableOpacity
+              style={styles.row}
               onPress={() => openLink('https://sakinacards.app/privacy')}
             >
               <Text style={styles.rowLabel}>Privacy Policy</Text>

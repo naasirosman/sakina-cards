@@ -141,7 +141,7 @@ export default function PaywallScreen() {
         </TouchableOpacity>
 
         <View style={styles.legal}>
-          <TouchableOpacity onPress={() => Linking.openURL('https://sakinacards.app/terms')}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')}>
             <Text style={styles.legalText}>Terms</Text>
           </TouchableOpacity>
           <Text style={styles.legalSep}>·</Text>
