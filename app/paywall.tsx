@@ -11,7 +11,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Purchases, { PurchasesPackage } from 'react-native-purchases';
+import Purchases, { LOG_LEVEL, PurchasesPackage } from 'react-native-purchases';
 import { Colors, Fonts, Radius, Spacing } from '../constants/theme';
 
 const ENTITLEMENT_ID = 'Full Sakina Pack';
@@ -36,6 +36,9 @@ export default function PaywallScreen() {
 
   useEffect(() => {
     if (__DEV__) { goBack(); return; }
+
+    Purchases.setLogLevel(LOG_LEVEL.WARN);
+    Purchases.configure({ apiKey: 'appl_afDcsxRNUIiGgJyuIuJqsyJQeaz' });
 
     Purchases.getOfferings()
       .then(offerings => setPkg(offerings.current?.availablePackages[0] ?? null))
