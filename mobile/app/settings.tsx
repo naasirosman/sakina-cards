@@ -144,7 +144,11 @@ export default function SettingsScreen() {
             <View style={styles.rowDivider} />
             <View style={styles.infoRow}>
               <Text style={styles.rowLabel}>Customer ID</Text>
-              <Text style={styles.rowValue}>{customerInfo?.originalAppUserId ?? '—'}</Text>
+              <Text style={[styles.rowValue, styles.rowValueTruncated]}>
+                {customerInfo?.originalAppUserId
+                  ? `••••${customerInfo.originalAppUserId.slice(-4)}`
+                  : '—'}
+              </Text>
             </View>
           </View>
         </View>
@@ -261,6 +265,11 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.regular,
     fontSize: 14,
     color: Colors.textMuted,
+  },
+  rowValueTruncated: {
+    flex: 1,
+    textAlign: 'right',
+    marginLeft: 16,
   },
   chevron: {
     fontSize: 22,
