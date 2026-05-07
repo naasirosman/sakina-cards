@@ -19,8 +19,10 @@ import { Colors } from '../constants/theme';
 
 // Configure RevenueCat at module load — must happen before any component
 // mounts, because React runs child useEffects before parent useEffects.
-Purchases.setLogLevel(__DEV__ ? LOG_LEVEL.VERBOSE : LOG_LEVEL.WARN);
-if (Platform.OS === 'ios') {
+// Skip entirely in dev: StoreKit is unavailable in Expo Go and all call sites
+// guard against __DEV__ already.
+if (!__DEV__ && Platform.OS === 'ios') {
+  Purchases.setLogLevel(LOG_LEVEL.WARN);
   Purchases.configure({ apiKey: 'appl_afDcsxRNUIiGgJyuIuJqsyJQeaz' });
 }
 

@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import RevenueCatUI from 'react-native-purchases-ui';
+import Purchases from 'react-native-purchases';
 import { Colors, Fonts, Radius, Spacing } from '../constants/theme';
 import { usePurchase } from '../hooks/usePurchase';
 
@@ -25,9 +25,10 @@ export default function SettingsScreen() {
   const [restoring, setRestoring] = useState(false);
 
   async function handleRestore() {
+    if (__DEV__) return;
     setRestoring(true);
     try {
-      await RevenueCatUI.presentCustomerCenter();
+      await Purchases.restorePurchases();
     } finally {
       setRestoring(false);
     }

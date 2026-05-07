@@ -2,15 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import Purchases, { CustomerInfo } from 'react-native-purchases';
 import { Level } from '../constants/decks';
 
-const ENTITLEMENT_ID = 'Sakina Cards Pro';
+const ENTITLEMENT_ID = 'Full Sakina Pack';
 
 export function usePurchase() {
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!__DEV__);
 
   const isPurchased = !!customerInfo?.entitlements.active[ENTITLEMENT_ID];
 
   useEffect(() => {
+    if (__DEV__) return;
+
     Purchases.getCustomerInfo()
       .then(setCustomerInfo)
       .catch(() => {})
@@ -21,7 +23,7 @@ export function usePurchase() {
     });
 
     return () => {
-      listener.remove();
+      listener?.remove();
     };
   }, []);
 

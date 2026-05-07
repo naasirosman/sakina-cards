@@ -46,7 +46,7 @@ export const DECKS: Deck[] = [
     title: 'Getting to Know',
     subtitle: 'Pre-Marriage Questions',
     description:
-      'Thoughtful questions for the blessed process of getting to know a potential spouse — with respect, intention & sincerity.',
+      'Thoughtful questions for the blessed process of getting to know a potential spouse with intention & sincerity.',
     emoji: '🌿',
     bgColor: '#F4F8F2',
     cardColor: '#FFFFFF',
