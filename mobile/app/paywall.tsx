@@ -145,7 +145,7 @@ export default function PaywallScreen() {
             <Text style={styles.legalText}>Terms</Text>
           </TouchableOpacity>
           <Text style={styles.legalSep}>·</Text>
-          <TouchableOpacity onPress={() => Linking.openURL('https://sakinacards.app/privacy')}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://sakinah-cards.vercel.app/privacy')}>
             <Text style={styles.legalText}>Privacy</Text>
           </TouchableOpacity>
         </View>

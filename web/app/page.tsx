@@ -232,7 +232,7 @@ export default function Home() {
           }}>
             Privacy Policy
           </Link>
-          <a href="mailto:hello@sakinacards.app" style={{
+          <a href="mailto:arabiyaapp@gmail.com" style={{
             fontFamily: 'Cormorant Garamond, Georgia, serif',
             fontSize: 13,
             color: '#C4B5A8',
