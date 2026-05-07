@@ -12,23 +12,22 @@ import {
 import * as Updates from 'expo-updates';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { Colors } from '../constants/theme';
 
-// Configure RevenueCat at module load — must happen before any component
-// mounts, because React runs child useEffects before parent useEffects.
-// Skip entirely in dev: StoreKit is unavailable in Expo Go and all call sites
-// guard against __DEV__ already.
-if (!__DEV__ && Platform.OS === 'ios') {
-  Purchases.setLogLevel(LOG_LEVEL.WARN);
-  Purchases.configure({ apiKey: 'appl_afDcsxRNUIiGgJyuIuJqsyJQeaz' });
-}
-
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  // Configure during render so the TurboModule bridge is ready, and before
+  // any child useEffects fire. The ref prevents re-running on re-renders.
+  const rcConfigured = useRef(false);
+  if (!rcConfigured.current && !__DEV__ && Platform.OS === 'ios') {
+    rcConfigured.current = true;
+    Purchases.setLogLevel(LOG_LEVEL.WARN);
+    Purchases.configure({ apiKey: 'appl_afDcsxRNUIiGgJyuIuJqsyJQeaz' });
+  }
   const [fontsLoaded] = useFonts({
     CormorantGaramond_400Regular,
     CormorantGaramond_400Regular_Italic,
