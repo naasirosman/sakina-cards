@@ -42,7 +42,7 @@ export default function PaywallScreen() {
 
     Purchases.getOfferings()
       .then(offerings => setPkg(offerings.current?.availablePackages[0] ?? null))
-      .catch((e: any) => setError(`Could not load pricing. (${e?.code ?? e?.message ?? 'unknown'})`))
+      .catch((e: any) => setError(JSON.stringify({ code: e?.code, msg: e?.message, rc: e?.readableErrorCode, underlying: e?.underlyingErrorMessage })))
       .finally(() => setLoading(false));
   }, []);
 
