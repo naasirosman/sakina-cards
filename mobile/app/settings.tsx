@@ -125,7 +125,7 @@ export default function SettingsScreen() {
             <View style={styles.rowDivider} />
             <TouchableOpacity
               style={styles.row}
-              onPress={() => openLink('https://sakinah-cards.vercel.app/privacy')}
+              onPress={() => openLink('https://sakinah-cards.vercel.app/privacy-policy')}
             >
               <Text style={styles.rowLabel}>Privacy Policy</Text>
               <Text style={styles.chevron}>›</Text>
