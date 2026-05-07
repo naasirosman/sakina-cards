@@ -13,12 +13,13 @@ export function usePurchase() {
   useEffect(() => {
     if (__DEV__) return;
 
+    Purchases.invalidateCustomerInfoCache();
     Purchases.getCustomerInfo()
       .then(setCustomerInfo)
       .catch(() => {})
       .finally(() => setIsLoading(false));
 
-    const listener = Purchases.addCustomerInfoUpdateListener((info) => {
+    const listener: any = Purchases.addCustomerInfoUpdateListener((info) => {
       setCustomerInfo(info);
     });
 
