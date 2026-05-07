@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 0; }
+
+.nav { padding: 20px 40px; }
+.hero { padding: 64px 24px 48px; }
+.hero-subtitle br { display: inline; }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+.cta-section { padding: 64px 24px; }
+.footer { padding: 32px 40px; }
+
+@media (max-width: 600px) {
+  .nav { padding: 16px 20px; }
+  .hero { padding: 40px 20px 36px; }
+  .hero-subtitle br { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 48px 20px; }
+  .footer { padding: 24px 20px; }
+}

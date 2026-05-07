@@ -31,11 +31,10 @@ export default function Home() {
     <div style={{ backgroundColor: '#FAFAF8', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
       {/* Nav */}
-      <nav style={{
+      <nav className="nav" style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '24px 40px',
         borderBottom: '1px solid #E8E0D5',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -47,12 +46,11 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section style={{
+      <section className="hero" style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        padding: '80px 24px 64px',
         maxWidth: 640,
         margin: '0 auto',
         width: '100%',
@@ -88,7 +86,7 @@ export default function Home() {
           marginBottom: 40,
           lineHeight: 1.5,
         }}>
-          Thoughtful conversation cards for Muslim couples,<br />families, and friends.
+          <span className="hero-subtitle">Thoughtful conversation cards for Muslim couples,<br />families, and friends.</span>
         </p>
         <a
           href={APP_STORE_URL}
@@ -125,11 +123,7 @@ export default function Home() {
         }}>
           Features
         </p>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: 16,
-        }}>
+        <div className="features-grid">
           {FEATURES.map((f) => (
             <div
               key={f.title}
@@ -164,11 +158,10 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section style={{
+      <section className="cta-section" style={{
         backgroundColor: '#F4F0EA',
         borderTop: '1px solid #E8E0D5',
         borderBottom: '1px solid #E8E0D5',
-        padding: '64px 24px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -208,8 +201,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer style={{
-        padding: '32px 40px',
+      <footer className="footer" style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
