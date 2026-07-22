@@ -43,7 +43,7 @@ export default function HomeScreen() {
         <View style={styles.titleSection}>
           <Text style={styles.brand}>SAKINA</Text>
           <Text style={styles.title}>Cards</Text>
-          <Text style={styles.subtitle}>Closer Together. Closer To Allah</Text>
+          <Text style={styles.subtitle}>Closer to Each Other, Closer to Allah</Text>
         </View>
 
         {/* Deck cards */}
